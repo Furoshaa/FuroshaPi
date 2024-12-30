@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuroshaTest</title>
+</head>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<body>
+    
+    <div id="app">
+    </div>
+
+</body> 
+
+<script type="text/jsx">
+
+    const app = document.getElementById('app');
+
+    function Header(props) {
+        console.log(props);
+        return <h1>{props.title}</h1>;
+    }
+
+    function HomePage() {
+
+        const names = ['grilli', 'kwerlz', 'brodu', 'ruinie'];
+
+        return (
+            <div>
+                <Header title="React development." />
+                <ul>
+                    {names.map((names) => (
+                        <li key="{names}">{names}</li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+
+    const root = ReactDOM.createRoot(app);
+    root.render(<HomePage />);
+
+</script>
+
+</html>
