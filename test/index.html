@@ -30,6 +30,12 @@
 
         const names = ['grilli', 'kwerlz', 'brodu', 'ruinie'];
 
+        const [likes, setLikes] = React.useState(0);
+
+        function handleClick() {
+            setLikes(likes + 1);
+        }
+
         return (
             <div>
                 <Header title="React development." />
@@ -38,6 +44,10 @@
                         <li key="{names}">{names}</li>
                     ))}
                 </ul>
+                <a href="https://www.psthc.fr/profil-psn-Furoosha.htm"><img src="https://carte.psthc.fr/thc/82600/Furoosha_PS3THC.png" border="0" alt="Trophées de Furoosha" /></a>
+                <br />
+                <button onClick={handleClick}>Like ({likes})</button>
+
             </div>
         );
     }
